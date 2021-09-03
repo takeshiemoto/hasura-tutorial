@@ -38,6 +38,9 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# hasura
-/hasura/.dev.env
-/hasura/.prod.env
+# Hasura
+.env
+!sample.env
+
+# postgresql
+pgsql-data/

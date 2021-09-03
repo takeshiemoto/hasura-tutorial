@@ -1,6 +1,49 @@
 {
   "version": 2,
   "projects": {
+    "auth-slack": {
+      "root": "apps/auth-slack",
+      "sourceRoot": "apps/auth-slack",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/auth-slack",
+            "outputPath": "dist/apps/auth-slack"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "auth-slack:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "auth-slack:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "auth-slack:build:production"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/auth-slack/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
     "todo-app": {
       "root": "apps/todo-app",
       "sourceRoot": "apps/todo-app",
