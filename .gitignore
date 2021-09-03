@@ -39,7 +39,7 @@ testem.log
 Thumbs.db
 
 # Hasura
-.env
+*.env
 !sample.env
 
 # postgresql
