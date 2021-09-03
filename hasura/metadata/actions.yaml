@@ -1,0 +1,14 @@
+actions:
+- name: auth0
+  definition:
+    kind: ""
+    handler: https://ninth-valiant-taurus.glitch.me/auth0
+    forward_client_headers: true
+  permissions:
+  - role: user
+custom_types:
+  enums: []
+  input_objects: []
+  objects:
+  - name: auth0_profile
+  scalars: []
